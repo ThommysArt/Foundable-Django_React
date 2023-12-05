@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import *
 from startup.serializers import StartupSerializer
-from freelancer.serializers import FreelancerSerializer
+from freelance.serializers import FreelancerSerializer
 
 
 class SubscriptionServiceSerializer(serializers.ModelSerializer):
