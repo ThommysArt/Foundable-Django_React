@@ -3,10 +3,12 @@ import string, random
 from .. import CURRENCY_CHOICES
 
 def generate_random_id():
-    characters = string.ascii_uppercase + string.digits  # Using letters and digits for the id
-    random_id = ''.join(random.choice(characters) for _ in range(9))
-    while random_id == PaypalPayment.objects.filter(t_id=random_id)[0]:
-        random_id = ''.join(random.choice(characters) for _ in range(9))
+    characters = string.ascii_uppercase + string.digits
+    length = 9  # Using letters and digits for the id
+    while True:
+        random_id = ''.join(random.choice(characters) for _ in range(length))
+        if not PaypalPayment.objects.filter(t_id=random_id).exists():
+            break
     return random_id
 
 

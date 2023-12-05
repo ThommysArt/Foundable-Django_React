@@ -1,3 +1,13 @@
+import string, random
+
+def generate_random_id(model_class):
+    characters = string.ascii_uppercase + string.digits
+    length = 9  # Using letters and digits for the id
+    while True:
+        random_id = ''.join(random.choice(characters) for _ in range(length))
+        if not model_class.objects.filter(t_id=random_id).exists():
+            break
+    return random_id
 
 
 CURRENCY_CHOICES = (
