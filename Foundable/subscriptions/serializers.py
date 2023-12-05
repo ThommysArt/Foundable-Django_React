@@ -25,7 +25,7 @@ class StartupSubscriptionSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class FreelancerSubscriptionSerialzer(serializers.ModelSerializer):
+class FreelancerSubscriptionSerializer(serializers.ModelSerializer):
     subscription = SubscriptionServiceSerializer()
     freelancer = FreelancerSerializer()
     class Meta:
