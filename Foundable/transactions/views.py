@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from .serializers import *
-from paypal.views import *
-from stripe.views import *
-from braintree.views import *
+from .paypal.views import *
+from .stripe.views import *
+from .braintree.views import *
 
 # Create your views here.
 
