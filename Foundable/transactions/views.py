@@ -10,6 +10,6 @@ from braintree.views import *
 
 class TransactionViewSet(viewsets.ModelViewSet):
     queryset = Transaction.objects.all()
-    serializer_class = TransactionSerialzer
+    serializer_class = TransactionSerializer
 
 

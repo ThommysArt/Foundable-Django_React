@@ -3,7 +3,7 @@ from .models import Transaction
 
 
 
-class TransactionSerialzer(serializers.ModelSerializer):
+class TransactionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Transaction
         fields = '__all__'
