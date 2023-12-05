@@ -16,7 +16,7 @@ def generate_random_id():
 
 
 class Transaction(models.Model):
-    t_id = models.CharField(max_length=9, default=generate_random_id())
+    t_id = models.CharField(max_length=9, default=generate_random_id, unique=True)
     amount = models.DecimalField(max_digits=12, decimal_places=2)
     currency = models.CharField(max_length=3, choices=CURRENCY_CHOICES, default="USD")
     created_at = models.DateTimeField(auto_now_add=True)

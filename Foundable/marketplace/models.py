@@ -23,7 +23,7 @@ class CartItem(models.Model):
 
 
 class Cart(models.Model):
-    cart_id = models.CharField(max_length=9, default=generate_random_id())
+    cart_id = models.CharField(max_length=9, default=generate_random_id, unique=True)
     items = models.ManyToManyField(CartItem)
     client = models.ForeignKey(Member, on_delete=models.SET_NULL)
     created_at = models.DateTimeField(auto_now_add=True)

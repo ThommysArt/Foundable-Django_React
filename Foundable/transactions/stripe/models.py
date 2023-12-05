@@ -13,7 +13,7 @@ def generate_random_id():
 
 
 class StripePayment(models.Model):
-    payment_id = models.CharField(max_length=9, default=generate_random_id(), unique=True)
+    payment_id = models.CharField(max_length=9, default=generate_random_id, unique=True)
     transaction_details = models.JSONField()
     amount = models.DecimalField(max_digits=12, decimal_places=2)
     currency = models.CharField(max_length=3, choices=CURRENCY_CHOICES, default="USD")
