@@ -4,7 +4,7 @@ from .views import *
 
 
 urlpatterns = [
-    path('transaction/', TransactionViewSet.as_view()),
+    path('transaction/', TransactionViewSet.as_view),
     path('paypal-payment/', PayPalPaymentAPIView.as_view()),
     path('paypal-retrieve/', RetrievePaypalPaymentAPIView.as_view()),
     path('paypal-list/', ListPaypalPaymentAPIView.as_view()),

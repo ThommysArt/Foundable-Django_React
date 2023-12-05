@@ -8,5 +8,5 @@ urlpatterns = [
     path('cart-detail', CartDetail.as_view()),
     path('cart-item-list', CartItemList.as_view()),
     path('cart-item-detail', CartItemDetail.as_view()),
-    path('purchase', PurchaseViewSet.as_view()),
+    path('purchase', PurchaseViewSet.as_view),
 ]
