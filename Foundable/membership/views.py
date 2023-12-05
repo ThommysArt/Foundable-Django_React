@@ -1,7 +1,6 @@
 
 from rest_framework import generics, status
 from rest_framework.response import Response
-from django.contrib.auth.models import member
 from . import serializers
 from rest_framework.permissions import IsAuthenticated
 from .serializers import *
@@ -60,7 +59,7 @@ class ForgotPasswordView(generics.CreateAPIView):
 
 class UpdateAccountView(generics.UpdateAPIView):
     serializer_class = MemberSerializer
-    model = member
+    model = Member
     permission_classes = (IsAuthenticated,)
 
     def get_object(self):
@@ -69,7 +68,7 @@ class UpdateAccountView(generics.UpdateAPIView):
 
 
 class DeleteAccountView(generics.DestroyAPIView):
-    model = member
+    model = Member
     permission_classes = (IsAuthenticated,)
 
     def get_object(self):
